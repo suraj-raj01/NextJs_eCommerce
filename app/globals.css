@@ -24,3 +24,462 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#navbar{
+  box-shadow: 0 0 5px rgb(193, 190, 190);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+}
+#navbar form input{
+  width: 320px;
+}
+
+#category-main{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: auto;
+  width: 93%;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 1px solid #dd2745;
+  padding: 15px 0px;
+}
+#category-main #box{
+  height: 10vh;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-right-color: #dd2745;
+}
+
+#slidebar{
+  display: none;
+  height: 80vh;
+  width: 300px;
+  top: 10vh;
+  z-index: 2;
+  position: absolute;
+  background-color: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 5px 15px #d7d4d4;
+  margin: auto;
+}
+
+#slidebar #link{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+#slidebar #link span{
+  padding:8px;
+  width: 100%;
+  cursor: pointer;
+  color: black;
+}
+#form{
+  height: auto;
+  width: 100%;
+  background-image: url('https://cdn.igp.com/raw/upload/assets/svg-icons/rebrand-login-ill.svg');
+  background-position: center;
+  background-size: contain;
+}
+#form form{
+  margin: 50px auto;
+  width: 550px;
+  box-shadow: 0px 0 10px #e6e4e4;
+  padding: 20px;
+  border-radius: 8px;
+  align-content: center;
+}
+#form form input{
+  margin: 10px auto;
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
+  border: 1px solid gray;
+}
+#form form button{
+  background-color: #dd2745;
+  border: 1px solid gray;
+  color: white;
+  padding: 10px;
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+#auth{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+#auth #box{
+  width: 30%;
+  height: 50px;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#carousel img{
+  border-radius: 10px;
+}
+
+#parent{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+  gap: 15px;
+}
+#parent #parent1{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+#parent #parent1 #box{
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  box-shadow: 0 0 2px #d8d7d7;
+  border-radius: 10px;
+}
+#parent #parent1 #box #content{
+  display: flex;
+  flex-direction: column;
+  align-items: censtater;
+  justify-content: start;
+  color: gray;
+}
+#parent #parent1 #box img{
+  border-radius: 10px;
+}
+#parent #parent2{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  /* background-color: blue; */
+}
+
+#parent #parent2 #box{
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  box-shadow: 0 0 2px #d8d7d7;
+  border-radius: 10px;
+}
+#parent #parent2 #box #content{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: gray;
+}
+#parent #parent2 #box img{
+  border-radius: 10px;
+}
+#contact-email{
+  background-image: url('https://cdn.igp.com/f_auto,q_auto/banners/Desktop_Newsletter.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  background-color: #3b4f61;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#contact-email #content{
+  width: 48%;
+  text-align: end;
+  border: 2px solid transparent;
+  border-right-color: white;
+  padding: 0px 10px;
+
+}
+#contact-email #email{
+  width: 48%;
+  text-align: start;
+}
+
+#contact-email input{
+  width: 300px;
+  border: 1px solid white;
+  padding: 15px;
+  color: white;
+}
+
+#contact-email button{
+  padding: 15px;
+  border: 1px solid #dd2745;
+  background-color: #dd2745;
+  width: 100px;
+  color: white;
+}
+
+/* footer */
+
+#socials{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+} 
+#socials #box1{
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#socials #box1 img{
+  width: 200px;
+}
+#socials #box2{
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+}
+#socials #box2 img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #dd2745;
+  padding: 5px;
+}
+
+
+/* ------------------------------- */
+
+#vendor-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: #11222c;
+  color: white;
+  font-size: 25px;
+}
+
+#vendor-main{
+  display: flex;
+}
+#vendordashboard{
+  height: 85vh;
+  width: 300px;
+  background-color: #11222c;
+  display: none;
+}
+#vendordashboard a{
+  width: 300px;
+  color: white;
+  padding: 0px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+#cancelbtn{
+  display: none;
+}
+
+
+/* Sign Up Form */
+
+#signup-form{
+  margin: auto;
+  padding: 5px;
+  width: 100%;
+  background-image: url('https://cdn.igp.com/raw/upload/assets/svg-icons/rebrand-login-ill.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  z-index: 2;
+}
+#signup-form form{
+  margin: 50px auto;
+  width: 550px;
+  box-shadow: 0px 0 10px #e6e4e4;
+  padding: 20px;
+  border-radius: 8px;
+  align-content: center;
+}
+#signup-form form input{
+  padding: 10px;
+  border-radius: 0px;
+}
+#signup-form form #name input{
+  width: 380px;
+}
+/* #signup-form form #email input{
+  width: 350px;
+}
+#signup-form form #password input{
+  width: 250px;
+} */
+
+#signup-form form select{
+  border-radius: 0px;
+  padding: 10px;
+}
+
+#signup-form form button{
+  background-color: #dd2745;
+  border: 1px solid gray;
+  color: white;
+  padding: 10px;
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* stats */
+#stats{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+#stats #box{
+  height: 300px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#stats #box h1{
+  transform: rotate(270deg);
+  color: #dd2745;
+  font-size: 90px;
+  text-align: start;
+  text-decoration: underline;
+}
+
+/* dashboard footer */
+
+#dashboard-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #11222c;
+  padding: 15px 0px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  #parent #parent2 #box {
+    flex: 1 1 calc(45% - 10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #category-main {
+    justify-content: center;
+  }
+
+  #category-main #box {
+    width: 45%;
+  }
+
+  #parent #parent1 #box,
+  #parent #parent2 #box {
+    flex: 1 1 100%;
+  }
+
+  #auth #box {
+    flex: 1 1 100%;
+  }
+
+  #contact-email #content,
+  #contact-email #email {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  #stats #box h1 {
+    transform: rotate(0deg);
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #navbar form {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #navbar form input{
+    width: 270px;
+  }
+  #vendor-main{
+    flex-direction: column;
+  }
+  #vendor-nav {
+    font-size: 18px;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-bottom-color: white;
+  }
+  #vendordashboard{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  #stats #box h1 {
+    font-size: 70px;
+  }
+  #contact-email #content{
+   width: 100%;
+  }
+  #contact-email #email{
+    padding: 10px;
+    width: 100%;
+  }
+  #icons{
+    display: flex;
+  }
+}
