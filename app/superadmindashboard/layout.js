@@ -33,10 +33,10 @@ export default function SuperAdminLayout({ children }) {
         </header>
         <div id="vendor-main">
         <div id="vendordashboard">
-            <Link href='#' className="flex items-center gap-3 text-2xl"><AiFillDashboard />Dashboard</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><RiInsertColumnRight />Insert</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><FaDisplay />See Admins</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><RxUpdate />Update</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><AiFillDashboard />Dashboard</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><RiInsertColumnRight />Insert</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><FaDisplay />See Admins</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><RxUpdate />Update</Link>
         </div>
         {children}
         </div>

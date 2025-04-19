@@ -1,4 +1,3 @@
-import style from "@/app/style.module.css"
 export default function Home() {
     return(
         <>

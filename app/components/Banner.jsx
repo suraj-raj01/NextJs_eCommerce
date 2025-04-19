@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import banner from "@/public/banner.webp"
+import banner from "../../public/banner.webp"
 
 const Banner = () => {
   return (

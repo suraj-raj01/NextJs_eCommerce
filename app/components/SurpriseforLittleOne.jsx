@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import img1 from "@/public/serpriseforlittleone/img1.webp"
-import img2 from "@/public/serpriseforlittleone/img2.webp"
+import img1 from "../../public/serpriseforlittleone/img1.webp"
+import img2 from "../../public/serpriseforlittleone/img2.webp"
 
 const SurpriseforLittleOne = () => {
   return (

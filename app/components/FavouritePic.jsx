@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import img1 from "@/public/favouritepic/img1.webp"
-import img2 from "@/public/favouritepic/img2.webp"
-import img3 from "@/public/favouritepic/img3.webp"
-import img4 from "@/public/favouritepic/img4.webp"
-import img5 from "@/public/favouritepic/img5.webp"
+import img1 from "../../public/favouritepic/img1.webp"
+import img2 from "../../public/favouritepic/img2.webp"
+import img3 from "../../public/favouritepic/img3.webp"
+import img4 from "../../public/favouritepic/img4.webp"
+import img5 from "../../public/favouritepic/img5.webp"
 
 const FavouritePic = () => {
   return (

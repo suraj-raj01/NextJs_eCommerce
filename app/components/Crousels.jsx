@@ -1,13 +1,13 @@
 'use client'
 import Image from 'next/image';
 import Carousel from 'react-bootstrap/Carousel';
-import img1 from "@/public/crousel-images/img1.webp"
-import img2 from "@/public/crousel-images/img2.webp"
-import img3 from "@/public/crousel-images/img3.webp"
-import img4 from "@/public/crousel-images/img4.webp"
-import img5 from "@/public/crousel-images/img5.webp"
-import img6 from "@/public/crousel-images/img6.webp"
-import img7 from "@/public/crousel-images/img7.webp"
+import img1 from "../../public/crousel-images/img1.webp"
+import img2 from "../../public/crousel-images/img2.webp"
+import img3 from "../../public/crousel-images/img3.webp"
+import img4 from "../../public/crousel-images/img4.webp"
+import img5 from "../../public/crousel-images/img5.webp"
+import img6 from "../../public/crousel-images/img6.webp"
+import img7 from "../../public/crousel-images/img7.webp"
 const Crousels = () => {
   return (
     <>

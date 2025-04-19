@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import delivery from "@/public/category-images/delivery.webp"
-import flowers from "@/public/category-images/flowers.webp"
-import cakes from "@/public/category-images/cakes.webp"
-import personalized from "@/public/category-images/personalized.webp"
-import plants from "@/public/category-images/plants.webp"
-import newarrival from "@/public/category-images/newarrivals.webp"
-import international from "@/public/category-images/international.webp"
-import bulkcorpgift from "@/public/category-images/bulkcorpgift.webp"
+import delivery from "../../public/category-images/delivery.webp"
+import flowers from "../../public/category-images/flowers.webp"
+import cakes from "../../public/category-images/cakes.webp"
+import personalized from "../../public/category-images/personalized.webp"
+import plants from "../../public/category-images/plants.webp"
+import newarrival from "../../public/category-images/newarrivals.webp"
+import international from "../../public/category-images/international.webp"
+import bulkcorpgift from "../../public/category-images/bulkcorpgift.webp"
 
 const Category = () => {
   return (

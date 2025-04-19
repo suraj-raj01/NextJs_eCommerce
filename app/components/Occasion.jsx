@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import img1 from "@/public/occasionimg/img1.webp"
-import img2 from "@/public/occasionimg/img2.webp"
-import img3 from "@/public/occasionimg/img3.webp"
-import img4 from "@/public/occasionimg/img4.webp"
-import img5 from "@/public/occasionimg/img5.webp"
-import img6 from "@/public/occasionimg/img6.webp"
-import img7 from "@/public/occasionimg/img7.webp"
+import img1 from "../../public/occasionimg/img1.webp"
+import img2 from "../../public/occasionimg/img2.webp"
+import img3 from "../../public/occasionimg/img3.webp"
+import img4 from "../../public/occasionimg/img4.webp"
+import img5 from "../../public/occasionimg/img5.webp"
+import img6 from "../../public/occasionimg/img6.webp"
+import img7 from "../../public/occasionimg/img7.webp"
 
 const Occasion = () => {
   return (

@@ -95,6 +95,7 @@ body {
   background-image: url('https://cdn.igp.com/raw/upload/assets/svg-icons/rebrand-login-ill.svg');
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 #form form{
   margin: 50px auto;
@@ -112,6 +113,15 @@ body {
   border-radius: 0px;
   border: 1px solid gray;
 }
+#form form select{
+  margin: 10px auto;
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 0px;
+  border: 1px solid gray;
+}
+
 #form form button{
   background-color: #dd2745;
   border: 1px solid gray;
@@ -137,6 +147,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+#auth #box button{
+  background-color: transparent;
+  width: auto;
+  margin: auto;
+  border: none;
+  box-shadow: none;
+  color: black;
+  padding: 0px;
 }
 
 #carousel img{
@@ -307,9 +326,8 @@ body {
 }
 #vendordashboard{
   height: 85vh;
-  width: 300px;
+  width: 280px;
   background-color: #11222c;
-  display: none;
 }
 #vendordashboard a{
   width: 300px;

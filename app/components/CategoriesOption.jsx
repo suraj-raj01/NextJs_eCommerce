@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import img1 from "@/public/categoriesoption/img1.webp"
-import img2 from "@/public/categoriesoption/img2.webp"
-import img3 from "@/public/categoriesoption/img3.webp"
-import img4 from "@/public/categoriesoption/img4.jpg"
-import img5 from "@/public/categoriesoption/img5.webp"
+import img1 from "../../public/categoriesoption/img1.webp"
+import img2 from "../../public/categoriesoption/img2.webp"
+import img3 from "../../public/categoriesoption/img3.webp"
+import img4 from "../../public/categoriesoption/img4.jpg"
+import img5 from "../../public/categoriesoption/img5.webp"
 
 const CategoriesOption = () => {
   return (

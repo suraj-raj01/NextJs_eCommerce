@@ -7,7 +7,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { AiFillDashboard } from "react-icons/ai";
 import { RiInsertColumnRight } from "react-icons/ri";
 import { FaDisplay } from "react-icons/fa6";
-import { RxUpdate } from "react-icons/rx";
+import { FaEdit } from "react-icons/fa";
 import DashbaordFooter from "../components/DashbaordFooter";
 import { RiLogoutBoxLine } from "react-icons/ri";
 export default function VendorLayout({ children }) {
@@ -36,11 +36,11 @@ export default function VendorLayout({ children }) {
         </header>
         <div id="vendor-main">
         <div id="vendordashboard">
-            <Link href='#' className="flex items-center gap-3 text-2xl"><AiFillDashboard />Dashboard</Link>
-            <Link href='vendordashboard/insert' className="flex items-center gap-3 text-2xl"><RiInsertColumnRight />Insert</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><FaDisplay />Display</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><RxUpdate />Update</Link>
-            <Link href='/' className="flex items-center gap-3 text-2xl"><RiLogoutBoxLine />LogOut</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><AiFillDashboard />Dashboard</Link>
+            <Link href='/vendordashboard/insert' className="flex items-center gap-3 text-2xs"><RiInsertColumnRight />Insert Product</Link>
+            <Link href='display' className="flex items-center gap-3 text-2xs"><FaDisplay />Display Product</Link>
+            <Link href='update' className="flex items-center gap-3 text-2xs"><FaEdit />Update Product</Link>
+            <Link href='/' className="flex items-center gap-3 text-2xs"><RiLogoutBoxLine />LogOut</Link>
         </div>
         {children}
         </div>

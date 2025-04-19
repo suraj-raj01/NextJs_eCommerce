@@ -5,19 +5,31 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { FaRegCircleUser } from "react-icons/fa6";
+import { IoMdLogIn } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { FaBars } from "react-icons/fa";
 import Image from "next/image";
-import logo from "@/public/logo/logo.png";
+import logo from "../../public/logo/logo.png";
 import { AiOutlineClose } from "react-icons/ai";
-import bag from "@/public/bag.svg";
+import bag from "../../public/bag.svg";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Dropdown from "react-bootstrap/Dropdown";
 import { useRouter } from "next/navigation";
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 export default function TopNav() {
   const router = useRouter();
+
   const sidebar = () => {
     document.getElementById("icon").style.display = "none";
     document.getElementById("slidebar").style.display = "block";
@@ -29,9 +41,10 @@ export default function TopNav() {
     document.getElementById("closebtn").style.display = "none";
   };
 
-  const home=()=>{
-    router.push("/")
-  }
+  const home = () => {
+    router.push("/");
+  };
+
 
   return (
     <>
@@ -47,11 +60,24 @@ export default function TopNav() {
             <AiOutlineClose
               id="closebtn"
               onClick={closeBtn}
-              style={{ display: "none", padding:'5px',borderRadius:'50%',backgroundColor:'ghostwhite',height:'30px',width:'30px' }}
+              style={{
+                display: "none",
+                padding: "5px",
+                borderRadius: "50%",
+                backgroundColor: "ghostwhite",
+                height: "30px",
+                width: "30px",
+              }}
             />
           </Navbar.Brand>
-          <Navbar.Brand >
-            <Image src={logo} alt="logo" height={40} className="p-0" onClick={home}/>
+          <Navbar.Brand>
+            <Image
+              src={logo}
+              alt="logo"
+              height={40}
+              className="p-0"
+              onClick={home}
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -83,7 +109,7 @@ export default function TopNav() {
               <Button variant="outline-success">Search</Button>
             </Form>
 
-            <Nav id="icons">
+            <Nav id="icons" className="flex items-center content-center">
               <Nav.Link href="#deets">
                 <HiCurrencyRupee className="text-2xl" />
               </Nav.Link>
@@ -93,9 +119,46 @@ export default function TopNav() {
               <Nav.Link href="#deets">
                 <IoMdCart className="text-2xl" />
               </Nav.Link>
-              <Nav.Link eventKey={2} href="login">
-                <FaRegCircleUser className="text-2xl" />
+              <Nav.Link>
+                {/* <Dropdown as={ButtonGroup}>
+                  <Button
+                    style={{ backgroundColor: "#dd2745", border: "none" }}
+                  >
+                    SignIn
+                  </Button>
+
+                  <Dropdown.Toggle
+                    split
+                    style={{ backgroundColor: "#dd2745", border: "none" }}
+                    id="dropdown-split-basic"
+                  />
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={user}>User</Dropdown.Item>
+                    <Dropdown.Item
+                      onClick={() => {
+                        router.push("/login");
+                      }}
+                    >
+                      Vendor
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      onClick={() => {
+                        router.push("/login");
+                      }}
+                    >
+                      Admin
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown> */}
               </Nav.Link>
+              <SignedOut>
+                <SignInButton className="font-bold text-transform:capitalize"/>
+                {/* <SignUpButton /> */}
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -109,9 +172,15 @@ export default function TopNav() {
                 <p className="text-2xl font-bold">Top Collections</p>
                 <Image src={bag} alt="bag" />
               </span>
-              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">Same Day Delivery Gifts</p>
-              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">Birthday Gifts</p>
-              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">Personalized Gifts</p>
+              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">
+                Same Day Delivery Gifts
+              </p>
+              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">
+                Birthday Gifts
+              </p>
+              <p className="font-bold ml-2 hover:text-red-600 cursor-pointer">
+                Personalized Gifts
+              </p>
             </div>
             <p className="font-bold text-gray-400 text-xs mt-2">Shop By </p>
             <Form.Select aria-label="Default select example">
@@ -165,7 +234,6 @@ export default function TopNav() {
               <option value="3">Teen</option>
               <option value="3">Kids</option>
             </Form.Select>
-           
           </div>
         </div>
       </Navbar>

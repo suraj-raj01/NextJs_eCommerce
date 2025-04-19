@@ -1,16 +1,13 @@
 "use client";
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
-import TopNav from "../components/TopNav";
 import Image from "next/image";
-import googlelogo from "@/public/logo/google.svg";
 import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import google from "@/public/logo/google.svg";
+import LoginNav from "../components/LoginNav";
 
 const page = () => {
   const [validated, setValidated] = useState(false);
@@ -32,7 +29,7 @@ const page = () => {
 
   return (
     <div>
-      <TopNav />
+      <LoginNav/>
       <div id="signup-form">
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <p className="text-2xl font-bold">Sign Up</p>
@@ -79,7 +76,7 @@ const page = () => {
               <Form.Label className="font-bold">Email ID*</Form.Label>
               <Form.Control type="email" placeholder="Email ID" required />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid city.
+                Please provide a valid email.
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group
@@ -91,7 +88,7 @@ const page = () => {
               <Form.Label className="font-bold">Password*</Form.Label>
               <Form.Control type="password" placeholder="Password" required />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid state.
+                Please provide a valid password.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -106,7 +103,7 @@ const page = () => {
               <Form.Label className="font-bold">Mobile Number*</Form.Label>
               <Form.Control type="number" placeholder="Mobile No" required />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid city.
+                Please provide a valid Mobile Number.
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group
@@ -118,7 +115,7 @@ const page = () => {
               <Form.Label className="font-bold">Date of Birth</Form.Label>
               <Form.Control type="date" placeholder="Date Of Birth" required />
               <Form.Control.Feedback type="invalid">
-                Please provide a valid state.
+                Please provide Date of Birth.
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -133,7 +130,7 @@ const page = () => {
           </Form.Group>
 
           <button type="submit">SIGN UP</button>
-          <p className="text-center p-3 font-bold">or sign in</p>
+          <p className="text-center p-2 font-bold">or sign in</p>
           <div id="auth">
             <div id="box"></div>
             <div id="box">

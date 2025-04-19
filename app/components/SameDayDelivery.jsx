@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import img1 from "@/public/samedaydelivery/img1.webp"
-import img2 from "@/public/samedaydelivery/img2.webp"
-import img3 from "@/public/samedaydelivery/img3.webp"
-import img4 from "@/public/samedaydelivery/img4.webp"
-import img5 from "@/public/samedaydelivery/img5.webp"
-import img6 from "@/public/samedaydelivery/img6.webp"
-import img7 from "@/public/samedaydelivery/img7.webp"
-import img8 from "@/public/samedaydelivery/img8.webp"
+import img1 from "../../public/samedaydelivery/img1.webp"
+import img2 from "../../public/samedaydelivery/img2.webp"
+import img3 from "../../public/samedaydelivery/img3.webp"
+import img4 from "../../public/samedaydelivery/img4.webp"
+import img5 from "../../public/samedaydelivery/img5.webp"
+import img6 from "../../public/samedaydelivery/img6.webp"
+import img7 from "../../public/samedaydelivery/img7.webp"
+import img8 from "../../public/samedaydelivery/img8.webp"
 
 const SameDayDelivery = () => {
   return (

@@ -1,13 +1,12 @@
 'use client'
-import style from "@/app/style.module.css"
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { AiFillDashboard } from "react-icons/ai";
 import { RiInsertColumnRight } from "react-icons/ri";
-import { FaDisplay } from "react-icons/fa6";
-import { RxUpdate } from "react-icons/rx";
+import { FaUserGroup } from "react-icons/fa6";
+import { FaEdit } from "react-icons/fa";
 import DashbaordFooter from "../components/DashbaordFooter";
 export default function AdminLayout({ children }) {
 
@@ -33,10 +32,10 @@ export default function AdminLayout({ children }) {
         </header>
         <div id="vendor-main">
         <div id="vendordashboard">
-            <Link href='#' className="flex items-center gap-3 text-2xl"><AiFillDashboard />Dashboard</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><RiInsertColumnRight />Insert</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><FaDisplay />See Vendors</Link>
-            <Link href='#' className="flex items-center gap-3 text-2xl"><RxUpdate />Update</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><AiFillDashboard />Dashboard</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><RiInsertColumnRight />Insert</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><FaUserGroup/>See Vendors</Link>
+            <Link href='#' className="flex items-center gap-3 text-2xs"><FaEdit />Update</Link>
         </div>
         {children}
         </div>

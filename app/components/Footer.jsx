@@ -1,13 +1,14 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
-import android from "@/public/Socialmedia/android.webp"
-import apple from "@/public/Socialmedia/apple.webp"
-import facebook from "@/public/Socialmedia/facebook.png"
-import twitter from "@/public/Socialmedia/twitter.png"
-import linkedin from "@/public/Socialmedia/linkedin.png"
-import instagram from "@/public/Socialmedia/instagram.png"
-import youtube from "@/public/Socialmedia/youtube.png"
-import logo from "@/public/logo/logo.png"
+import android from "../../public/Socialmedia/android.webp"
+import apple from "../../public/Socialmedia/apple.webp"
+import facebook from "../../public/Socialmedia/facebook.png"
+import twitter from "../../public/Socialmedia/twitter.png"
+import linkedin from "../../public/Socialmedia/linkedin.png"
+import instagram from "../../public/Socialmedia/instagram.png"
+import youtube from "../../public/Socialmedia/youtube.png"
+import logo from "../../public/logo/logo.png"
 import { FaCcVisa } from "react-icons/fa";
 import { FaCcMastercard } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";

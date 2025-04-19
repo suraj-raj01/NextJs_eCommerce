@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.16.0",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.5",
     "mongoose": "^8.13.2",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "22.14.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
     "tailwindcss": "^4"
