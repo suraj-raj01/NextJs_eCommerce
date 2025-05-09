@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.16.0",
+    "@prisma/client": "^6.6.0",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.5",
+    "dotenv": "^16.5.0",
     "mongoose": "^8.13.2",
     "next": "15.3.0",
     "react": "^19.0.0",
@@ -25,6 +27,7 @@
     "@types/node": "22.14.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
+    "prisma": "^6.6.0",
     "tailwindcss": "^4"
   }
 }

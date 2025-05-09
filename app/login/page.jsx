@@ -2,38 +2,54 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Image from "next/image";
-import googlelogo from "@/public/logo/google.svg";
+// import googlelogo from "@/public/logo/google.svg";
 import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import LoginNav from "../components/LoginNav";
 import { TbDeviceMobileMessage } from "react-icons/tb";
 import { useUser } from "@clerk/nextjs";
+import axios from "axios";
 
-const page = () => {
-  const [validated, setValidated] = useState(false);
-  const router = useRouter();
-  const user = useUser();
-  console.log(user);
+export default async function page() {
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  const loadData=async()=>{
+     let api = "http://localhost:3000/api/getuser";
+     try {
+      const res = await axios.get(api);
+      console.log(res.data);
+     } catch (error) {
+      console.error("Error fetching data:", error);
+     }
+  }
 
-    setValidated(true);
-  };
+  // 
 
-  const signUp = () => {
-    router.push("/signup");
-  };
+
+
+  // const [validated, setValidated] = useState(false);
+  // const router = useRouter();
+  // const user = useUser();
+  // console.log(user);
+
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+
+  //   setValidated(true);
+  // };
+
+  // const signUp = () => {
+  //   router.push("/signup");
+  // };
 
 
   return (
     <div>
       <LoginNav />
-      <div id="form">
+      {/* <div id="form">
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <p className="text-2xl font-bold">Sign In</p>
           <p className="font-bold">
@@ -86,9 +102,10 @@ const page = () => {
             </div>
           </div>
         </Form>
-      </div>
+      </div> */}
+      <button onClick={loadData}>Load Data</button>
     </div>
   );
 };
 
-export default page;
+

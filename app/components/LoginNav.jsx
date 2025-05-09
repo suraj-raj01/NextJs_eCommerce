@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import logo from "@/public/logo/logo.png"
+import logo from "../../public/logo/logo.png"
 import { useRouter } from 'next/navigation'
 
 
