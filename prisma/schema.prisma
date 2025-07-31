@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,11 +8,285 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model product {
+model Permission {
   id          String   @id @default(cuid())
   name        String
   description String?
-  price       Float
+  roles       Role[]   @relation("RolePermissions")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-}        
+}
+
+model Role {
+  id          String       @id @default(cuid())
+  name        String
+  users       User[]       @relation("UserRoles")
+  permissions Permission[] @relation("RolePermissions")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  name      String
+  email     String    @unique
+  password  String
+  roles     Role[]    @relation("UserRoles")
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model TaxRule {
+  id        String   @id @default(uuid())
+  country   String
+  state     String?
+  type      String
+  rate      Float
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id           String      @id @default(uuid())
+  name         String
+  category     String
+  description  String
+  price        Int
+  stock        Int
+  orderItems   OrderItem[]
+  reviews      reviews[]
+  userId       String
+  images       String[]
+  defaultImage String
+  colors       String[]
+  user         User        @relation(fields: [userId], references: [id])
+  createdAt    DateTime    @default(now())
+}
+
+model Invoice {
+  id         String   @id @default(uuid())
+  products   String[]
+  amount     Float
+  currency   String
+  isPaid     Boolean
+  dueDate    DateTime
+  customerId String
+  orderId    String?
+  order      Order[]
+  customer   Customer @relation(fields: [customerId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+model Order {
+  id         String      @id @default(uuid())
+  orderItems OrderItem[]
+  invoiceId  String?
+  invoice    Invoice?    @relation(fields: [invoiceId], references: [id])
+  netTotal   Float
+  tax        Float
+  subTotal   Float
+  discount   Float       @default(0)
+  status     String
+  customerId String
+  customer   Customer    @relation(fields: [customerId], references: [id])
+  complaint  Complaint[]
+  confirmed  Boolean     @default(false)
+  createdAt  DateTime    @default(now())
+
+  deliveryTracking DeliveryTracking[]
+  refundRequests   RefundRequest[]
+  returnRequests   ReturnRequest[]
+
+  couponId String?
+  coupon   Coupon? @relation(fields: [couponId], references: [id])
+}
+
+model OrderItem {
+  id             String          @id @default(uuid())
+  order          Order           @relation(fields: [orderId], references: [id])
+  orderId        String
+  product        Product         @relation(fields: [productId], references: [id])
+  productId      String
+  quantity       Int
+  price          Int
+  returnRequests ReturnRequest[]
+}
+
+model reviews {
+  id         String   @id @default(uuid())
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id])
+  rating     Int
+  comment    String
+  createdAt  DateTime @default(now())
+}
+
+model Complaint {
+  id         String   @id @default(uuid())
+  orderId    String
+  order      Order    @relation(fields: [orderId], references: [id])
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id])
+  complaint  String
+  status     String
+}
+
+model Customer {
+  id         String      @id @default(uuid())
+  name       String
+  email      String      @unique
+  phone      String
+  address    String
+  state      String
+  city       String
+  password   String?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  reviews    reviews[]
+  orders     Order[]
+  invoices   Invoice[]
+  complaints Complaint[]
+}
+
+model RefundRequest {
+  id        String   @id @default(uuid())
+  orderId   String
+  reason    String
+  status    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  order     Order    @relation(fields: [orderId], references: [id])
+}
+
+model ReturnRequest {
+  id          String    @id @default(uuid())
+  orderItemId String
+  orderId     String
+  reason      String
+  status      String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  orderItem   OrderItem @relation(fields: [orderItemId], references: [id])
+  order       Order     @relation(fields: [orderId], references: [id])
+}
+
+model DeliveryTracking {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  status    String   @default("pending")
+  location  String?
+  timestamp DateTime @default(now())
+}
+
+model Coupon {
+  id          String    @id @default(uuid())
+  code        String    @unique
+  description String?
+  discount    Float
+  isActive    Boolean   @default(true)
+  expiryDate  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  orders      Order[]
+}
+
+model Plans {
+  id               String   @id @default(uuid())
+  logo             String?
+  checklogo        Boolean  @default(true)
+  title            String?
+  checktitle       Boolean  @default(true)
+  subtitle         String?
+  checksubtitle    Boolean  @default(true)
+  price            Float?
+  checkprice       Boolean  @default(true)
+  plantype         Int?
+  bilingcycle      String?
+  checkduration    Boolean  @default(true)
+  description      String?
+  checkdescription Boolean  @default(true)
+  features         String[] @default([])
+  checkfeatures    Boolean  @default(true)
+  visibility       Boolean  @default(true)
+  button           String?
+  checkbutton      Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Plantype {
+  id        String   @id @default(uuid())
+  type      Int? // number of days
+  typecheck Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Billingcycle {
+  id        String   @id @default(uuid())
+  type      String? // monthly / yearly
+  typecheck Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Sitesetting {
+  id String @id @default(uuid())
+
+  // menubar
+  companylogo    String?
+  menutitles     Json? // from String[] to Json
+  checkmenutitle Boolean @default(true)
+  addtocarticon  String?
+  checkaddtocart Boolean @default(true)
+  favouriteicon  String?
+  checkfavourite Boolean @default(true)
+  loginicon      String?
+  checkloginicon Boolean @default(true)
+  checkmenu      Boolean @default(true)
+
+  // hero section
+  heroimg          String?
+  checkheroimg     Boolean @default(true)
+  herotitle        String?
+  checkherotitle   Boolean @default(true)
+  herodescription  String?
+  checkherodesc    Boolean @default(true)
+  heroimages       Json? //
+  checkheroimages  Boolean @default(true)
+  explorebtn       String?
+  explorebtnlink   String?
+  checkexplorebtn  Boolean @default(true)
+  checkherosection Boolean @default(true)
+
+  // company partner
+  companypartnertitle      String?
+  checkcompanypartnertitle Boolean @default(true)
+  companypartners          Json? //
+  checkcompanypartner      Boolean @default(true)
+
+  // features
+  featuretitle        String?
+  checkfeaturetitle   Boolean @default(true)
+  featuredescription  String?
+  checkfeaturedesc    Boolean @default(true)
+  checkcompanyfeature Boolean @default(true)
+
+  // footer
+  quicklinktitle  String?
+  quicklinks      Json? //
+  addresstitle    String?
+  address         String?
+  contact         String?
+  email           String?
+  checkaddress    Boolean @default(true)
+  sociallinks     Json? //
+  checksociallink Boolean @default(true)
+
+  copyright   String?
+  maintenance Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

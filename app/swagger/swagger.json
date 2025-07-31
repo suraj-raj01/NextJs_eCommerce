@@ -1,0 +1,134 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SiteSetting API",
+    "version": "1.0.0",
+    "description": "API for creating and retrieving site settings"
+  },
+  "paths": {
+    "/api/store/sitesetting": {
+      "get": {
+        "summary": "Get all site settings",
+        "responses": {
+          "200": {
+            "description": "List of site settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SiteSetting" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new site setting",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SiteSettingInput" },
+              "example": {
+                "navlogo": "Quisquam necessitati",
+                "navtitle1": "Amet minus voluptat",
+                "navtitle2": "Consequuntur sed seq",
+                "heroimg": "Mollitia eaque proid",
+                "herotitle": "Qui aut cupiditate r",
+                "herodescription": "Et aute facere a ist",
+                "heroimages": ["Commodi aut in aut u", "Debitis qui dolor do"],
+                "explorebtn": "Soluta ipsa volupta",
+                "componylogo": "Inventore in molesti",
+                "componytitle": "Eum quis consequatur",
+                "componydescription": "Qui nesciunt rerum ",
+                "componyyear": "Cillum molestias par",
+                "componyicon": "Molestiae consequatu",
+                "plantitle": "Deleniti facilis dol",
+                "plantype": "enterprise",
+                "amount": "Id possimus est i",
+                "keyfeatures": ["Quis dolorum dolore ", "Ea magni consequatur"],
+                "dropdowntitle": "Maxime aut quidem sa",
+                "dropdowndescription": "Saepe iste eum quis ",
+                "cardtitle": "Exercitation eaque e",
+                "carddescription": "Ipsum est non sit",
+                "footertitle": "Qui reiciendis quis ",
+                "footerlink1": "Laudantium qui quo ",
+                "footerlink2": "Dolores necessitatib",
+                "footerlink3": "Quam commodi consequ",
+                "footerlink4": "Eiusmod quam atque q",
+                "footerlink5": "Unde facilis consequ",
+                "icons": [
+                  "Facilis tempor culpa",
+                  "Facere dolor quasi p",
+                  "Enim qui aliqua Et "
+                ],
+                "visibility": "pending"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Site created successfully" },
+          "500": { "description": "Failed to create site setting" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SiteSetting": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "navlogo": { "type": "string" },
+          "navtitle1": { "type": "string" },
+          "navtitle2": { "type": "string" },
+          "heroimg": { "type": "string" },
+          "herotitle": { "type": "string" },
+          "herodescription": { "type": "string" },
+          "heroimages": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "explorebtn": { "type": "string" },
+          "componylogo": { "type": "string" },
+          "componytitle": { "type": "string" },
+          "componydescription": { "type": "string" },
+          "componyyear": { "type": "string" },
+          "componyicon": { "type": "string" },
+          "plantitle": { "type": "string" },
+          "plantype": { "type": "string" },
+          "amount": { "type": "string" },
+          "keyfeatures": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "dropdowntitle": { "type": "string" },
+          "dropdowndescription": { "type": "string" },
+          "cardtitle": { "type": "string" },
+          "carddescription": { "type": "string" },
+          "footertitle": { "type": "string" },
+          "footerlink1": { "type": "string" },
+          "footerlink2": { "type": "string" },
+          "footerlink3": { "type": "string" },
+          "footerlink4": { "type": "string" },
+          "footerlink5": { "type": "string" },
+          "icons": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "visibility": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "SiteSettingInput": {
+        "type": "object",
+        "allOf": [
+          { "$ref": "#/components/schemas/SiteSetting" }
+        ]
+      }
+    }
+  }
+}
