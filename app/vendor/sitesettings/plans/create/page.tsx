@@ -388,7 +388,7 @@ const PlansManager = () => {
                   </SelectTrigger>
                   <SelectContent>
                     {bilingcycle.map((cycle,index) => (
-                      <SelectItem key={index} value={cycle.type || ''}>
+                      <SelectItem key={index} value={cycle.type !== null ? String(cycle.type) : ''}>
                         {cycle.type}
                       </SelectItem>
                     ))}
@@ -406,7 +406,7 @@ const PlansManager = () => {
                   <Label htmlFor="plantype">Plan Type</Label>
                 </div>
                 <Select
-                  value={selectedPlanType ?? undefined}
+                  value={selectedPlanType !== null ? String(selectedPlanType) : undefined}
                   onValueChange={(value) => setSelectedPlanType(parseInt(value))}
                 >
                   <SelectTrigger className='w-full'>
@@ -414,7 +414,7 @@ const PlansManager = () => {
                   </SelectTrigger>
                   <SelectContent>
                     {planType.map((plan,index) => (
-                      <SelectItem key={index} value={plan.type || ''}>
+                      <SelectItem key={index} value={plan.type !== null ? String(plan.type) : ''}>
                         {plan.type}
                       </SelectItem>
                     ))}
