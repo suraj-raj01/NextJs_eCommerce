@@ -232,7 +232,9 @@ import React from 'react'
 
 const ViewPage = () => {
   return (
-    <div>ViewPage</div>
+    <div>
+        Product View Page
+    </div>
   )
 }
 
