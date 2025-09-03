@@ -51,7 +51,7 @@ export default function Roles() {
     const [searchQuery, setSearchQuery] = useState<string>('')
     const [selectedPermissions, setSelectedPermissions] = useState<string[]>([])
 
-    const api = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'
+    const api = process.env.NEXT_PUBLIC_API_URL || 'https://next-js-e-commerce-gilt-delta.vercel.app/api'
 
     const fetchRoles = async () => {
         try {
