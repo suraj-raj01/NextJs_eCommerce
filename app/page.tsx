@@ -30,7 +30,6 @@ export default function Home() {
                 Go to Dashboard
               </Link>
             </Button>
-            Link: {process.env.NEXT_PUBLIC_API_URL}
           </CardContent>
 
           <CardFooter className="flex items-center justify-center mb-5 text-sm text-gray-400">
